@@ -1,0 +1,9 @@
+$ pip install git+https://github.com/googledrive/PyDrive.git#egg=PyDrive
+
+from pydrive.drive import GoogleDrive
+drive = GoogleDrive(gauth)
+
+# To create a new folder
+folder_name = input("Name the Folder : ")
+folder = drive.CreateFile({'title' : folder_name, 'mimeType' : 'application/vnd.google-apps.folder'})
+folder.Upload()
